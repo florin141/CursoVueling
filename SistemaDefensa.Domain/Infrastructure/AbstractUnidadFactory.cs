@@ -7,26 +7,21 @@ namespace SistemaDefensa.Domain
 {
     public abstract class AbstractUnidadFactory
     {
-        public static AbstractUnidadFactory GetFactory(string name)
+        public static AbstractUnidadFactory GetFactory(Division division)
         {
-            if (name == "caballeria")
+            switch (division)
             {
-                return new CaballeriaFactory();
-            }
-            else if (name == "infanteria")
-            {
-                return new InfanteriaFactory();
-            }
-            else if (name == "artilleria")
-            {
-                return new ArtilleriaFactory();
-            }
-            else
-            {
-                return null;
+                case Division.Caballeria:
+                    return new CaballeriaFactory();
+                case Division.Infanteria:
+                    return new InfanteriaFactory();
+                case Division.Artilleria:
+                    return new ArtilleriaFactory();
+                default:
+                    return null;
             }
         }
 
-        abstract public Unidad GetUnidad(string name);
+        abstract public Unidad GetUnidad(SubDivision subDivision);
     }
 }

@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Infrastructure\Enum\Enums.cs" />
     <Compile Include="Interfaces\ICalculable.cs" />
     <Compile Include="Infrastructure\AbstractUnidadFactory.cs" />
     <Compile Include="Interfaces\ConBlindaje.cs" />

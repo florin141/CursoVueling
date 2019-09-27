@@ -2,23 +2,18 @@
 {
     internal class CaballeriaFactory : AbstractUnidadFactory
     {
-        public override Unidad GetUnidad(string name)
+        public override Unidad GetUnidad(SubDivision caballeria)
         {
-            if (name == "TransporteMX7899")
+            switch (caballeria)
             {
-                return new TransporteMX7899();
-            }
-            else if (name == "TanqueAtaqueSombrasVB98")
-            {
-                return new TanqueAtaqueSombrasVB98();
-            }
-            else if (name == "TransporteTAXIN66")
-            {
-                return new TransporteTAXIN66();
-            }
-            else
-            {
-                return null;
+                case SubDivision.Caballeria_TransporteMX7899:
+                    return new TransporteMX7899();
+                case SubDivision.Caballeria_TanqueAtaqueSombrasVB98:
+                    return new TanqueAtaqueSombrasVB98();
+                case SubDivision.Caballeria_TransporteTAXIN66:
+                    return new TransporteTAXIN66();
+                default:
+                    return null;
             }
         }
     }

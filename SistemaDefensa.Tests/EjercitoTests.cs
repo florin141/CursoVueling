@@ -21,19 +21,19 @@ namespace SistemaDefensa.Tests
         [TestInitialize]
         public void Initialize()
         {
-            AbstractUnidadFactory caballeriaFactory = AbstractUnidadFactory.GetFactory("caballeria");
-            AbstractUnidadFactory infanteriaFactory = AbstractUnidadFactory.GetFactory("infanteria");
-            AbstractUnidadFactory artilleriaFactory = AbstractUnidadFactory.GetFactory("artilleria");
+            AbstractUnidadFactory caballeriaFactory = AbstractUnidadFactory.GetFactory(Division.Caballeria);
+            AbstractUnidadFactory infanteriaFactory = AbstractUnidadFactory.GetFactory(Division.Infanteria);
+            AbstractUnidadFactory artilleriaFactory = AbstractUnidadFactory.GetFactory(Division.Artilleria);
 
-            _unidad1 = caballeriaFactory.GetUnidad("TransporteMX7899");
-            _unidad2 = caballeriaFactory.GetUnidad("TanqueAtaqueSombrasVB98");
-            _unidad3 = caballeriaFactory.GetUnidad("TransporteTAXIN66");
-            _unidad4 = infanteriaFactory.GetUnidad("InfanteriaBasica");
-            _unidad5 = infanteriaFactory.GetUnidad("Ametrallador");
-            _unidad6 = infanteriaFactory.GetUnidad("Sanitario");
-            _unidad7 = artilleriaFactory.GetUnidad("CanonAntiaereo");
-            _unidad8 = artilleriaFactory.GetUnidad("TorpederoMovil");
-            _unidad9 = artilleriaFactory.GetUnidad("Canon");
+            _unidad1 = caballeriaFactory.GetUnidad(SubDivision.Caballeria_TransporteMX7899);
+            _unidad2 = caballeriaFactory.GetUnidad(SubDivision.Caballeria_TanqueAtaqueSombrasVB98);
+            _unidad3 = caballeriaFactory.GetUnidad(SubDivision.Caballeria_TransporteTAXIN66);
+            _unidad4 = infanteriaFactory.GetUnidad(SubDivision.Infanteria_InfanteriaBasica);
+            _unidad5 = infanteriaFactory.GetUnidad(SubDivision.Infanteria_Ametrallador);
+            _unidad6 = infanteriaFactory.GetUnidad(SubDivision.Infanteria_Sanitario);
+            _unidad7 = artilleriaFactory.GetUnidad(SubDivision.Artilleria_CanonAntiaereo);
+            _unidad8 = artilleriaFactory.GetUnidad(SubDivision.Artilleria_TorpederoMovil);
+            _unidad9 = artilleriaFactory.GetUnidad(SubDivision.Artilleria_Canon);
         }
 
         [TestMethod]

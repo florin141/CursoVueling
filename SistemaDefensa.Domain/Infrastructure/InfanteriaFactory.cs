@@ -2,23 +2,18 @@
 {
     internal class InfanteriaFactory : AbstractUnidadFactory
     {
-        public override Unidad GetUnidad(string name)
+        public override Unidad GetUnidad(SubDivision subDivision)
         {
-            if (name == "InfanteriaBasica")
+            switch (subDivision)
             {
-                return new InfanteriaBasica();
-            }
-            else if (name == "Ametrallador")
-            {
-                return new Ametrallador();
-            }
-            else if (name == "Sanitario")
-            {
-                return new Sanitario();
-            }
-            else
-            {
-                return null;
+                case SubDivision.Infanteria_InfanteriaBasica:
+                    return new InfanteriaBasica();
+                case SubDivision.Infanteria_Ametrallador:
+                    return new Ametrallador();
+                case SubDivision.Infanteria_Sanitario:
+                    return new Sanitario();
+                default:
+                    return null;
             }
         }
     }

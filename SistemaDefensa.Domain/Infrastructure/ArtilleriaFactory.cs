@@ -2,23 +2,18 @@
 {
     internal class ArtilleriaFactory : AbstractUnidadFactory
     {
-        public override Unidad GetUnidad(string name)
+        public override Unidad GetUnidad(SubDivision subDivision)
         {
-            if (name == "CanonAntiaereo")
+            switch (subDivision)
             {
-                return new CanonAntiaereo();
-            }
-            else if (name == "TorpederoMovil")
-            {
-                return new TorpederoMovil();
-            }
-            else if (name == "Canon")
-            {
-                return new Canon();
-            }
-            else
-            {
-                return null;
+                case SubDivision.Artilleria_CanonAntiaereo:
+                    return new CanonAntiaereo();
+                case SubDivision.Artilleria_TorpederoMovil:
+                    return new TorpederoMovil();
+                case SubDivision.Artilleria_Canon:
+                    return new Canon();
+                default:
+                    return null;
             }
         }
     }
