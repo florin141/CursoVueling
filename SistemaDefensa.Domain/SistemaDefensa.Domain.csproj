@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5ECF9EC4-054B-4840-823B-58BEB10E9D37}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SistemaDefensa.Domain</RootNamespace>
+    <AssemblyName>SistemaDefensa.Domain</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Interfaces\ICalculable.cs" />
+    <Compile Include="Infrastructure\AbstractUnidadFactory.cs" />
+    <Compile Include="Interfaces\ConBlindaje.cs" />
+    <Compile Include="Interfaces\ConFuego.cs" />
+    <Compile Include="Interfaces\ConMovilidad.cs" />
+    <Compile Include="Ejercito\Ejercito.cs" />
+    <Compile Include="Interfaces\IInfanteria.cs" />
+    <Compile Include="Interfaces\IArilleria.cs" />
+    <Compile Include="Interfaces\SinBlindaje.cs" />
+    <Compile Include="Interfaces\SinFuego.cs" />
+    <Compile Include="Interfaces\SinMovilidad.cs" />
+    <Compile Include="Unidades\Canon.cs" />
+    <Compile Include="Unidades\TorpederoMovil.cs" />
+    <Compile Include="Interfaces\ICaballeria.cs" />
+    <Compile Include="Unidades\Ametrallador.cs" />
+    <Compile Include="Infrastructure\ArtilleriaFactory.cs" />
+    <Compile Include="Infrastructure\CaballeriaFactory.cs" />
+    <Compile Include="Unidades\CanonAntiaereo.cs" />
+    <Compile Include="Interfaces\IBlindado.cs" />
+    <Compile Include="Interfaces\IDestructor.cs" />
+    <Compile Include="Interfaces\IMovil.cs" />
+    <Compile Include="Unidades\InfanteriaBasica.cs" />
+    <Compile Include="Infrastructure\InfanteriaFactory.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Unidades\Sanitario.cs" />
+    <Compile Include="Unidades\TanqueAtaqueSombrasVB98.cs" />
+    <Compile Include="Unidades\TransporteMX7899.cs" />
+    <Compile Include="Unidades\TransporteTAXIN66.cs" />
+    <Compile Include="Unidades\Unidad.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="SistemaDefensa.Domain.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Interfaces\Enum\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

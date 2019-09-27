@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
-namespace ClassLibrary1
+namespace SistemaDefensa.Domain
 {
-    public class Class1
+    public interface IBlindado
     {
+        double ResistenciaAlAtaque();
     }
 }
