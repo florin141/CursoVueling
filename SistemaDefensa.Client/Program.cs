@@ -1,4 +1,5 @@
-﻿using SistemaDefensa.Domain;
+﻿using Autofac;
+using SistemaDefensa.Domain;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,9 +10,13 @@ namespace SistemaDefensa.Client
 {
     class Program
     {
+        static IContainer Container;
+
         static void Main(string[] args)
         {
-            ICalculable calc = new Calculabe();
+            ConfigureContainer();
+
+            var calc = Container.Resolve<ICalculable>();
             Ejercito ejercito = new Ejercito(calc);
 
             DivisionFactory caballeriaFactory = DivisionFactory.GetDivision(Division.Caballeria);
@@ -35,6 +40,15 @@ namespace SistemaDefensa.Client
             Console.WriteLine("Precio: " + ejercito.Precio());
             Console.WriteLine("Capacidad Militar: " + ejercito.CapacidadMilitar());
 
+        }
+
+        static void ConfigureContainer()
+        {
+            var builder = new ContainerBuilder();
+
+            builder.RegisterType<Calculabe>().As<ICalculable>().InstancePerDependency();
+
+            Container = builder.Build();
         }
     }
 }
