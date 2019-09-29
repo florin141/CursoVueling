@@ -11,7 +11,8 @@ namespace SistemaDefensa.Client
     {
         static void Main(string[] args)
         {
-            Ejercito ejercito = new Ejercito();
+            ICalculable calc = new Calculabe();
+            Ejercito ejercito = new Ejercito(calc);
 
             DivisionFactory caballeriaFactory = DivisionFactory.GetDivision(Division.Caballeria);
             DivisionFactory infanteriaFactory = DivisionFactory.GetDivision(Division.Infanteria);

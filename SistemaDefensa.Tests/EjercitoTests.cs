@@ -22,6 +22,8 @@ namespace SistemaDefensa.Tests
         Unidad _unidad8;
         Unidad _unidad9;
 
+        ICalculable _calc;
+
         [TestInitialize]
         public void Initialize()
         {
@@ -38,38 +40,40 @@ namespace SistemaDefensa.Tests
             _unidad7 = _artilleriaFactory.GetSubdivision(Subdivision.Artilleria_CanonAntiaereo);
             _unidad8 = _artilleriaFactory.GetSubdivision(Subdivision.Artilleria_TorpederoMovil);
             _unidad9 = _artilleriaFactory.GetSubdivision(Subdivision.Artilleria_Canon);
+
+            _calc = new Calculabe();
         }
 
-        [TestMethod]
-        public void Capacidad_militar_test_3()
-        {
-            // Arange
-            Ejercito ejercito = new Ejercito();
+        //[TestMethod]
+        //public void Capacidad_militar_test_3()
+        //{
+        //    // Arange
+        //    Ejercito ejercito = new Ejercito(_calc);
 
-            Unidad transporter = _caballeriaFactory.GetSubdivision(Subdivision.Caballeria_TransporteMX7899);
+        //    Unidad transporter = _caballeriaFactory.GetSubdivision(Subdivision.Caballeria_TransporteMX7899);
 
-            Unidad s1 = _artilleriaFactory.GetSubdivision(Subdivision.Infanteria_Sanitario);
-            Unidad s2 = _artilleriaFactory.GetSubdivision(Subdivision.Infanteria_Sanitario);
-            Unidad b1 = _artilleriaFactory.GetSubdivision(Subdivision.Infanteria_InfanteriaBasica);
-            Unidad b2 = _artilleriaFactory.GetSubdivision(Subdivision.Infanteria_InfanteriaBasica);
-            Unidad b3 = _artilleriaFactory.GetSubdivision(Subdivision.Infanteria_InfanteriaBasica);
-            Unidad b4 = _artilleriaFactory.GetSubdivision(Subdivision.Infanteria_InfanteriaBasica);
+        //    Unidad s1 = _artilleriaFactory.GetSubdivision(Subdivision.Infanteria_Sanitario);
+        //    Unidad s2 = _artilleriaFactory.GetSubdivision(Subdivision.Infanteria_Sanitario);
+        //    Unidad b1 = _artilleriaFactory.GetSubdivision(Subdivision.Infanteria_InfanteriaBasica);
+        //    Unidad b2 = _artilleriaFactory.GetSubdivision(Subdivision.Infanteria_InfanteriaBasica);
+        //    Unidad b3 = _artilleriaFactory.GetSubdivision(Subdivision.Infanteria_InfanteriaBasica);
+        //    Unidad b4 = _artilleriaFactory.GetSubdivision(Subdivision.Infanteria_InfanteriaBasica);
 
-            transporter.Add(s1, s2, b1, b2, b3, b4);
+        //    transporter.Add(s1, s2, b1, b2, b3, b4);
 
-            // Act
-            double actual = ejercito.CapacidadMilitar();
-            double expected = 0.44145;
+        //    // Act
+        //    double actual = ejercito.CapacidadMilitar();
+        //    double expected = 0.44145;
 
-            // Asert
-            Assert.AreEqual(expected, actual, 0.00001);
-        }
+        //    // Asert
+        //    Assert.AreEqual(expected, actual, 0.00001);
+        //}
 
         [TestMethod]
         public void Capacidad_militar_test_1()
         {
             // Arange
-            Ejercito ejercito = new Ejercito();
+            Ejercito ejercito = new Ejercito(_calc);
 
             ejercito.AddUnidad(_unidad1);
             ejercito.AddUnidad(_unidad2);
@@ -83,17 +87,17 @@ namespace SistemaDefensa.Tests
 
             // Act
             double actual = ejercito.CapacidadMilitar();
-            double expected = 0.44145;
+            double expected = 0.41508;
 
             // Asert
-            Assert.AreEqual(expected, actual, 0.00001);
+            Assert.AreEqual(expected, actual, 0.00000001);
         }
 
         [TestMethod]
         public void Counter_unidades_test1()
         {
             // Arange
-            Ejercito ejercito = new Ejercito();
+            Ejercito ejercito = new Ejercito(_calc);
 
             ejercito.AddUnidad(_unidad1);
             ejercito.AddUnidad(_unidad2);
@@ -117,7 +121,7 @@ namespace SistemaDefensa.Tests
         public void Counter_unidades_test2()
         {
             // Arange
-            Ejercito ejercito = new Ejercito();
+            Ejercito ejercito = new Ejercito(_calc);
 
             ejercito.AddUnidad(_unidad1);
             ejercito.AddUnidad(_unidad2);
@@ -148,7 +152,7 @@ namespace SistemaDefensa.Tests
         public void CapacidadDeMovimiendo_UnidadSinCapacidadDeMovimiento_DebeDevolverUno()
         {
             // Arrange
-            Ejercito ejercito = new Ejercito();
+            Ejercito ejercito = new Ejercito(_calc);
 
             ejercito.AddUnidad(_unidad9);
 
@@ -164,7 +168,7 @@ namespace SistemaDefensa.Tests
         public void CapacidadDeMovimiendo_UnidadesConVariasCapacidadesDeMovimiento_DebeDevolverElMinimo()
         {
             // Arrange
-            Ejercito ejercito = new Ejercito();
+            Ejercito ejercito = new Ejercito(_calc);
 
             ejercito.AddUnidad(_unidad1);
             ejercito.AddUnidad(_unidad7);
@@ -181,7 +185,7 @@ namespace SistemaDefensa.Tests
         public void PotenciaDeFuego_UnidadesSinPotenciaDeFuego_DebeDevolverUno()
         {
             // Arrange
-            Ejercito ejercito = new Ejercito();
+            Ejercito ejercito = new Ejercito(_calc);
 
             ejercito.AddUnidad(_unidad3);
             ejercito.AddUnidad(_unidad6);
@@ -198,7 +202,7 @@ namespace SistemaDefensa.Tests
         public void PotenciaDeFuego_UnidadesConPotenciaDeFuego_DebeDevolverElTotal()
         {
             // Arrange
-            Ejercito ejercito = new Ejercito();
+            Ejercito ejercito = new Ejercito(_calc);
 
             ejercito.AddUnidad(_unidad2);
             ejercito.AddUnidad(_unidad4);
@@ -215,7 +219,7 @@ namespace SistemaDefensa.Tests
         public void ResistenciaAlAtaque_UnidadesSinResistenciaAlAtaque_DebeDevolverZero()
         {
             // Arrange
-            Ejercito ejercito = new Ejercito();
+            Ejercito ejercito = new Ejercito(_calc);
 
             ejercito.AddUnidad(_unidad4);
             ejercito.AddUnidad(_unidad5);
@@ -232,7 +236,7 @@ namespace SistemaDefensa.Tests
         public void ResistenciaAlAtaque_ConResistenciaAlAtaque_DebeDevolverPromedio()
         {
             // Arrange
-            Ejercito ejercito = new Ejercito();
+            Ejercito ejercito = new Ejercito(_calc);
 
             ejercito.AddUnidad(_unidad1);
             ejercito.AddUnidad(_unidad2);
@@ -249,7 +253,7 @@ namespace SistemaDefensa.Tests
         public void CapacidadMilitar_Test1()
         {
             // Arrange
-            Ejercito ejercito = new Ejercito();
+            Ejercito ejercito = new Ejercito(_calc);
 
             ejercito.AddUnidad(_unidad1);
             ejercito.AddUnidad(_unidad2);
@@ -273,7 +277,7 @@ namespace SistemaDefensa.Tests
         public void CapacidadMilitar_CuandoElBlindajeEs100_DebeLansarUnaExeption()
         {
             // Arrange
-            Ejercito ejercito = new Ejercito();
+            Ejercito ejercito = new Ejercito(_calc);
 
             ejercito.AddUnidad(_unidad1);
 

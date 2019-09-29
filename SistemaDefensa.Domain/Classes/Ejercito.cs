@@ -111,7 +111,8 @@ namespace SistemaDefensa.Domain
             PotenciaDeFuego();
             Movimiento();
             Blindaje();
-            return ((_pf * _cm) / 2.0) / (100.0 - _bl);
+
+            return _calculable.CapacidadMilitar(_pf, _cm, _bl);
         }
     }
 }

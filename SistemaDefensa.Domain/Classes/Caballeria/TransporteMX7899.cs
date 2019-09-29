@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace SistemaDefensa.Domain
 {
-    public class TransporteMX7899 : Unidad, ICaballeria, INode
+    public class TransporteMX7899 : Unidad, ICaballeria
     {
         public TransporteMX7899()
         {
@@ -14,11 +11,6 @@ namespace SistemaDefensa.Domain
             SetMovilidad(new ConMovilidad(4.5));
             SetBlindaje(new ConBlindaje(1.4));
             SetDestructor(new SinFuego());
-        }
-
-        public bool Add(params object[] o)
-        {
-            throw new NotImplementedException();
         }
     }
 }
