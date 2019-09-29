@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SistemaDefensa.Domain
+﻿namespace SistemaDefensa.Domain
 {
     public enum Division
     {
@@ -13,7 +7,7 @@ namespace SistemaDefensa.Domain
         Artilleria
     }
 
-    public enum SubDivision
+    public enum Subdivision
     {
         Caballeria_TransporteMX7899,
         Caballeria_TanqueAtaqueSombrasVB98,

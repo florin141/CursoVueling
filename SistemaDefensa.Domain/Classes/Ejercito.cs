@@ -26,12 +26,14 @@ namespace SistemaDefensa.Domain
         /// <summary>
         /// Unidades.
         /// </summary>
-        private IList<Unidad> _unidades { get; set; }
+        private IList<Unidad> _unidades;
 
+        private ICalculable _calculable;
 
-        public Ejercito()
+        public Ejercito(ICalculable calculable)
         {
             _unidades = new List<Unidad>();
+            _calculable = calculable;
         }
 
         /// <summary>

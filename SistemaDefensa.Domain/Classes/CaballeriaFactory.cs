@@ -1,16 +1,16 @@
 ﻿namespace SistemaDefensa.Domain
 {
-    internal class CaballeriaFactory : AbstractUnidadFactory
+    public class CaballeriaFactory : DivisionFactory
     {
-        public override Unidad GetUnidad(SubDivision caballeria)
+        public override Unidad GetSubdivision(Subdivision caballeria)
         {
             switch (caballeria)
             {
-                case SubDivision.Caballeria_TransporteMX7899:
+                case Subdivision.Caballeria_TransporteMX7899:
                     return new TransporteMX7899();
-                case SubDivision.Caballeria_TanqueAtaqueSombrasVB98:
+                case Subdivision.Caballeria_TanqueAtaqueSombrasVB98:
                     return new TanqueAtaqueSombrasVB98();
-                case SubDivision.Caballeria_TransporteTAXIN66:
+                case Subdivision.Caballeria_TransporteTAXIN66:
                     return new TransporteTAXIN66();
                 default:
                     return null;

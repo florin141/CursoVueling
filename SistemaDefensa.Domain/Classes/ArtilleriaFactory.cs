@@ -1,16 +1,16 @@
 ﻿namespace SistemaDefensa.Domain
 {
-    internal class ArtilleriaFactory : AbstractUnidadFactory
+    public class ArtilleriaFactory : DivisionFactory
     {
-        public override Unidad GetUnidad(SubDivision subDivision)
+        public override Unidad GetSubdivision(Subdivision subDivision)
         {
             switch (subDivision)
             {
-                case SubDivision.Artilleria_CanonAntiaereo:
+                case Subdivision.Artilleria_CanonAntiaereo:
                     return new CanonAntiaereo();
-                case SubDivision.Artilleria_TorpederoMovil:
+                case Subdivision.Artilleria_TorpederoMovil:
                     return new TorpederoMovil();
-                case SubDivision.Artilleria_Canon:
+                case Subdivision.Artilleria_Canon:
                     return new Canon();
                 default:
                     return null;

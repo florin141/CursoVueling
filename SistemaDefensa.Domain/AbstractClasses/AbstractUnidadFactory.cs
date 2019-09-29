@@ -5,9 +5,9 @@ using System.Text;
 
 namespace SistemaDefensa.Domain
 {
-    public abstract class AbstractUnidadFactory
+    public abstract class DivisionFactory
     {
-        public static AbstractUnidadFactory GetFactory(Division division)
+        public static DivisionFactory GetDivision(Division division)
         {
             switch (division)
             {
@@ -22,6 +22,6 @@ namespace SistemaDefensa.Domain
             }
         }
 
-        abstract public Unidad GetUnidad(SubDivision subDivision);
+        abstract public Unidad GetSubdivision(Subdivision subdivision);
     }
 }

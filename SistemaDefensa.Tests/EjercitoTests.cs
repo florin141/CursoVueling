@@ -8,32 +8,61 @@ namespace SistemaDefensa.Tests
     [TestClass]
     public class EjercitoTests
     {
-        private Unidad _unidad1;
-        private Unidad _unidad2;
-        private Unidad _unidad3;
-        private Unidad _unidad4;
-        private Unidad _unidad5;
-        private Unidad _unidad6;
-        private Unidad _unidad7;
-        private Unidad _unidad8;
-        private Unidad _unidad9;
+        DivisionFactory _caballeriaFactory;
+        DivisionFactory _infanteriaFactory;
+        DivisionFactory _artilleriaFactory;
+
+        Unidad _unidad1;
+        Unidad _unidad2;
+        Unidad _unidad3;
+        Unidad _unidad4;
+        Unidad _unidad5;
+        Unidad _unidad6;
+        Unidad _unidad7;
+        Unidad _unidad8;
+        Unidad _unidad9;
 
         [TestInitialize]
         public void Initialize()
         {
-            AbstractUnidadFactory caballeriaFactory = AbstractUnidadFactory.GetFactory(Division.Caballeria);
-            AbstractUnidadFactory infanteriaFactory = AbstractUnidadFactory.GetFactory(Division.Infanteria);
-            AbstractUnidadFactory artilleriaFactory = AbstractUnidadFactory.GetFactory(Division.Artilleria);
+            _caballeriaFactory = DivisionFactory.GetDivision(Division.Caballeria);
+            _infanteriaFactory = DivisionFactory.GetDivision(Division.Infanteria);
+            _artilleriaFactory = DivisionFactory.GetDivision(Division.Artilleria);
 
-            _unidad1 = caballeriaFactory.GetUnidad(SubDivision.Caballeria_TransporteMX7899);
-            _unidad2 = caballeriaFactory.GetUnidad(SubDivision.Caballeria_TanqueAtaqueSombrasVB98);
-            _unidad3 = caballeriaFactory.GetUnidad(SubDivision.Caballeria_TransporteTAXIN66);
-            _unidad4 = infanteriaFactory.GetUnidad(SubDivision.Infanteria_InfanteriaBasica);
-            _unidad5 = infanteriaFactory.GetUnidad(SubDivision.Infanteria_Ametrallador);
-            _unidad6 = infanteriaFactory.GetUnidad(SubDivision.Infanteria_Sanitario);
-            _unidad7 = artilleriaFactory.GetUnidad(SubDivision.Artilleria_CanonAntiaereo);
-            _unidad8 = artilleriaFactory.GetUnidad(SubDivision.Artilleria_TorpederoMovil);
-            _unidad9 = artilleriaFactory.GetUnidad(SubDivision.Artilleria_Canon);
+            _unidad1 = _caballeriaFactory.GetSubdivision(Subdivision.Caballeria_TransporteMX7899);
+            _unidad2 = _caballeriaFactory.GetSubdivision(Subdivision.Caballeria_TanqueAtaqueSombrasVB98);
+            _unidad3 = _caballeriaFactory.GetSubdivision(Subdivision.Caballeria_TransporteTAXIN66);
+            _unidad4 = _infanteriaFactory.GetSubdivision(Subdivision.Infanteria_InfanteriaBasica);
+            _unidad5 = _infanteriaFactory.GetSubdivision(Subdivision.Infanteria_Ametrallador);
+            _unidad6 = _infanteriaFactory.GetSubdivision(Subdivision.Infanteria_Sanitario);
+            _unidad7 = _artilleriaFactory.GetSubdivision(Subdivision.Artilleria_CanonAntiaereo);
+            _unidad8 = _artilleriaFactory.GetSubdivision(Subdivision.Artilleria_TorpederoMovil);
+            _unidad9 = _artilleriaFactory.GetSubdivision(Subdivision.Artilleria_Canon);
+        }
+
+        [TestMethod]
+        public void Capacidad_militar_test_3()
+        {
+            // Arange
+            Ejercito ejercito = new Ejercito();
+
+            Unidad transporter = _caballeriaFactory.GetSubdivision(Subdivision.Caballeria_TransporteMX7899);
+
+            Unidad s1 = _artilleriaFactory.GetSubdivision(Subdivision.Infanteria_Sanitario);
+            Unidad s2 = _artilleriaFactory.GetSubdivision(Subdivision.Infanteria_Sanitario);
+            Unidad b1 = _artilleriaFactory.GetSubdivision(Subdivision.Infanteria_InfanteriaBasica);
+            Unidad b2 = _artilleriaFactory.GetSubdivision(Subdivision.Infanteria_InfanteriaBasica);
+            Unidad b3 = _artilleriaFactory.GetSubdivision(Subdivision.Infanteria_InfanteriaBasica);
+            Unidad b4 = _artilleriaFactory.GetSubdivision(Subdivision.Infanteria_InfanteriaBasica);
+
+            transporter.Add(s1, s2, b1, b2, b3, b4);
+
+            // Act
+            double actual = ejercito.CapacidadMilitar();
+            double expected = 0.44145;
+
+            // Asert
+            Assert.AreEqual(expected, actual, 0.00001);
         }
 
         [TestMethod]

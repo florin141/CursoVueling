@@ -1,16 +1,16 @@
 ﻿namespace SistemaDefensa.Domain
 {
-    internal class InfanteriaFactory : AbstractUnidadFactory
+    public class InfanteriaFactory : DivisionFactory
     {
-        public override Unidad GetUnidad(SubDivision subDivision)
+        public override Unidad GetSubdivision(Subdivision subDivision)
         {
             switch (subDivision)
             {
-                case SubDivision.Infanteria_InfanteriaBasica:
+                case Subdivision.Infanteria_InfanteriaBasica:
                     return new InfanteriaBasica();
-                case SubDivision.Infanteria_Ametrallador:
+                case Subdivision.Infanteria_Ametrallador:
                     return new Ametrallador();
-                case SubDivision.Infanteria_Sanitario:
+                case Subdivision.Infanteria_Sanitario:
                     return new Sanitario();
                 default:
                     return null;

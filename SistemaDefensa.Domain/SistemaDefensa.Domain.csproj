@@ -41,42 +41,41 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Infrastructure\Enum\Enums.cs" />
+    <Compile Include="Enum\Enums.cs" />
     <Compile Include="Interfaces\ICalculable.cs" />
-    <Compile Include="Infrastructure\AbstractUnidadFactory.cs" />
-    <Compile Include="Interfaces\ConBlindaje.cs" />
-    <Compile Include="Interfaces\ConFuego.cs" />
-    <Compile Include="Interfaces\ConMovilidad.cs" />
-    <Compile Include="Ejercito\Ejercito.cs" />
+    <Compile Include="AbstractClasses\AbstractUnidadFactory.cs" />
+    <Compile Include="Classes\ConBlindaje.cs" />
+    <Compile Include="Classes\ConFuego.cs" />
+    <Compile Include="Classes\ConMovilidad.cs" />
+    <Compile Include="Classes\Ejercito.cs" />
     <Compile Include="Interfaces\IInfanteria.cs" />
     <Compile Include="Interfaces\IArilleria.cs" />
-    <Compile Include="Interfaces\SinBlindaje.cs" />
-    <Compile Include="Interfaces\SinFuego.cs" />
-    <Compile Include="Interfaces\SinMovilidad.cs" />
-    <Compile Include="Unidades\Canon.cs" />
-    <Compile Include="Unidades\TorpederoMovil.cs" />
+    <Compile Include="Classes\SinBlindaje.cs" />
+    <Compile Include="Classes\SinFuego.cs" />
+    <Compile Include="Classes\SinMovilidad.cs" />
+    <Compile Include="Classes\Artilleria\Canon.cs" />
+    <Compile Include="Classes\Artilleria\TorpederoMovil.cs" />
     <Compile Include="Interfaces\ICaballeria.cs" />
-    <Compile Include="Unidades\Ametrallador.cs" />
-    <Compile Include="Infrastructure\ArtilleriaFactory.cs" />
-    <Compile Include="Infrastructure\CaballeriaFactory.cs" />
-    <Compile Include="Unidades\CanonAntiaereo.cs" />
+    <Compile Include="Classes\Infanteria\Ametrallador.cs" />
+    <Compile Include="Classes\ArtilleriaFactory.cs" />
+    <Compile Include="Classes\CaballeriaFactory.cs" />
+    <Compile Include="Classes\Artilleria\CanonAntiaereo.cs" />
     <Compile Include="Interfaces\IBlindado.cs" />
     <Compile Include="Interfaces\IDestructor.cs" />
     <Compile Include="Interfaces\IMovil.cs" />
-    <Compile Include="Unidades\InfanteriaBasica.cs" />
-    <Compile Include="Infrastructure\InfanteriaFactory.cs" />
+    <Compile Include="Classes\Infanteria\InfanteriaBasica.cs" />
+    <Compile Include="Classes\InfanteriaFactory.cs" />
+    <Compile Include="Interfaces\INode.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Unidades\Sanitario.cs" />
-    <Compile Include="Unidades\TanqueAtaqueSombrasVB98.cs" />
-    <Compile Include="Unidades\TransporteMX7899.cs" />
-    <Compile Include="Unidades\TransporteTAXIN66.cs" />
-    <Compile Include="Unidades\Unidad.cs" />
+    <Compile Include="Classes\Infanteria\Sanitario.cs" />
+    <Compile Include="Classes\Caballeria\TanqueAtaqueSombrasVB98.cs" />
+    <Compile Include="Classes\Caballeria\TransporteMX7899.cs" />
+    <Compile Include="Classes\Caballeria\TransporteTAXIN66.cs" />
+    <Compile Include="AbstractClasses\Unidad.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="SistemaDefensa.Domain.cd" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Interfaces\Enum\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

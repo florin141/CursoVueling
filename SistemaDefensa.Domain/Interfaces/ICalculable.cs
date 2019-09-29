@@ -2,5 +2,6 @@
 {
     public interface ICalculable
     {
+        double CapacidadMilitar();
     }
 }
