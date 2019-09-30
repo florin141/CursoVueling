@@ -41,7 +41,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\Calculabe.cs" />
+    <Compile Include="Classes\Bazooka.cs" />
+    <Compile Include="Classes\Bicycle.cs" />
+    <Compile Include="Classes\DefaultCalculable.cs" />
+    <Compile Include="Classes\Injured.cs" />
+    <Compile Include="Classes\Pistol.cs" />
+    <Compile Include="Classes\Shield.cs" />
     <Compile Include="Enum\Enums.cs" />
     <Compile Include="Interfaces\ICalculable.cs" />
     <Compile Include="AbstractClasses\AbstractUnidadFactory.cs" />

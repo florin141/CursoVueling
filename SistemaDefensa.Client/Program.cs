@@ -46,7 +46,7 @@ namespace SistemaDefensa.Client
         {
             var builder = new ContainerBuilder();
 
-            builder.RegisterType<Calculabe>().As<ICalculable>().InstancePerDependency();
+            builder.RegisterType<DefaultCalculable>().As<ICalculable>().InstancePerDependency();
 
             Container = builder.Build();
         }

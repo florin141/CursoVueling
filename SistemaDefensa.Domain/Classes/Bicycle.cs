@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace SistemaDefensa.Domain
 {
-    public class Calculabe : ICalculable
+    public class Bicycle : IMovil
     {
-        public double CapacidadMilitar(double pf, double cm, double bl)
+        public double CapacidadDeMovimiento()
         {
-            return ((pf * cm) / 2.0) / (100.0 - bl);
+            return 10;
         }
     }
 }

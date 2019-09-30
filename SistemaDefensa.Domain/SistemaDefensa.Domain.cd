@@ -28,54 +28,6 @@
       <FileName>Classes\InfanteriaFactory.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="SistemaDefensa.Domain.ConBlindaje" BaseTypeListCollapsed="true">
-    <Position X="24.25" Y="0.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAIEAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Classes\ConBlindaje.cs</FileName>
-    </TypeIdentifier>
-    <Lollipop Position="0.2" Collapsed="true" />
-  </Class>
-  <Class Name="SistemaDefensa.Domain.ConFuego" BaseTypeListCollapsed="true">
-    <Position X="26" Y="0.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAgAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Classes\ConFuego.cs</FileName>
-    </TypeIdentifier>
-    <Lollipop Position="0.2" Collapsed="true" />
-  </Class>
-  <Class Name="SistemaDefensa.Domain.ConMovilidad" BaseTypeListCollapsed="true">
-    <Position X="22.5" Y="0.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAIAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Classes\ConMovilidad.cs</FileName>
-    </TypeIdentifier>
-    <Lollipop Position="0.2" Collapsed="true" />
-  </Class>
-  <Class Name="SistemaDefensa.Domain.SinBlindaje" BaseTypeListCollapsed="true">
-    <Position X="24.25" Y="2.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Classes\SinBlindaje.cs</FileName>
-    </TypeIdentifier>
-    <Lollipop Position="0.2" Collapsed="true" />
-  </Class>
-  <Class Name="SistemaDefensa.Domain.SinFuego" BaseTypeListCollapsed="true">
-    <Position X="26" Y="2.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Classes\SinFuego.cs</FileName>
-    </TypeIdentifier>
-    <Lollipop Position="0.2" Collapsed="true" />
-  </Class>
-  <Class Name="SistemaDefensa.Domain.SinMovilidad" BaseTypeListCollapsed="true">
-    <Position X="22.5" Y="2.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Classes\SinMovilidad.cs</FileName>
-    </TypeIdentifier>
-    <Lollipop Position="0.2" Collapsed="true" />
-  </Class>
   <Class Name="SistemaDefensa.Domain.Ametrallador">
     <Position X="1" Y="5.25" Width="1.5" />
     <TypeIdentifier>
@@ -150,8 +102,15 @@
   </Class>
   <Class Name="SistemaDefensa.Domain.Unidad">
     <Position X="10.5" Y="0.5" Width="1.75" />
+    <NestedTypes>
+      <Class Name="SistemaDefensa.Domain.Unidad.NullUnidad" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>AbstractClasses\Unidad.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
     <TypeIdentifier>
-      <HashCode>AIAAAAAgAAAAAAAAgAAAhAEwAAgAAAAAAAAAAAoQAEA=</HashCode>
+      <HashCode>AIAAAAAgAAAAAAAAgAAAhAEwAAgAAAAAAAIAAAoQAEA=</HashCode>
       <FileName>AbstractClasses\Unidad.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -162,43 +121,123 @@
       <FileName>AbstractClasses\AbstractUnidadFactory.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Interface Name="SistemaDefensa.Domain.IArilleria">
+  <Class Name="SistemaDefensa.Domain.Bazooka" BaseTypeListCollapsed="true">
+    <Position X="26" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\Bazooka.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="SistemaDefensa.Domain.Bicycle" BaseTypeListCollapsed="true">
+    <Position X="22.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\Bicycle.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="SistemaDefensa.Domain.ConBlindaje" BaseTypeListCollapsed="true">
+    <Position X="24.25" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAIEAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\ConBlindaje.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="SistemaDefensa.Domain.ConFuego" BaseTypeListCollapsed="true">
+    <Position X="26" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\ConFuego.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="SistemaDefensa.Domain.ConMovilidad" BaseTypeListCollapsed="true">
+    <Position X="22.5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\ConMovilidad.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="SistemaDefensa.Domain.Injured" BaseTypeListCollapsed="true">
     <Position X="22.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\Injured.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="SistemaDefensa.Domain.Pistol" BaseTypeListCollapsed="true">
+    <Position X="26" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\Pistol.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="SistemaDefensa.Domain.SinBlindaje" BaseTypeListCollapsed="true">
+    <Position X="24.25" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\SinBlindaje.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="SistemaDefensa.Domain.SinMovilidad" BaseTypeListCollapsed="true">
+    <Position X="22.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\SinMovilidad.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="SistemaDefensa.Domain.SinFuego" BaseTypeListCollapsed="true">
+    <Position X="26" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\SinFuego.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Interface Name="SistemaDefensa.Domain.IArilleria">
+    <Position X="16.25" Y="1.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Interfaces\IArilleria.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="SistemaDefensa.Domain.IBlindado">
-    <Position X="24.25" Y="5.5" Width="1.5" />
+    <Position X="18" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Interfaces\IBlindado.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="SistemaDefensa.Domain.ICaballeria">
-    <Position X="26" Y="4.25" Width="1.5" />
+    <Position X="19.75" Y="1.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Interfaces\ICaballeria.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="SistemaDefensa.Domain.IDestructor">
-    <Position X="22.5" Y="5.5" Width="1.5" />
+    <Position X="16.25" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Interfaces\IDestructor.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="SistemaDefensa.Domain.IInfanteria">
-    <Position X="24.25" Y="4.25" Width="1.5" />
+    <Position X="18" Y="1.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Interfaces\IInfanteria.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="SistemaDefensa.Domain.IMovil">
-    <Position X="26" Y="5.5" Width="1.5" />
+    <Position X="19.75" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Interfaces\IMovil.cs</FileName>

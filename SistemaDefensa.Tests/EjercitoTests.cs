@@ -41,7 +41,7 @@ namespace SistemaDefensa.Tests
             _unidad8 = _artilleriaFactory.GetSubdivision(Subdivision.Artilleria_TorpederoMovil);
             _unidad9 = _artilleriaFactory.GetSubdivision(Subdivision.Artilleria_Canon);
 
-            _calc = new Calculabe();
+            _calc = new DefaultCalculable();
         }
 
         //[TestMethod]
