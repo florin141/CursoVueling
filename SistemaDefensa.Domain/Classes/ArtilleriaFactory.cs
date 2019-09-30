@@ -11,7 +11,7 @@
                 case Subdivision.Artilleria_TorpederoMovil:
                     return new TorpederoMovil();
                 case Subdivision.Artilleria_Canon:
-                    return new Canon();
+                    return new CanonBuilder();
                 default:
                     return Unidad.Null;
             }

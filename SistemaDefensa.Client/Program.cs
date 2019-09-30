@@ -17,7 +17,7 @@ namespace SistemaDefensa.Client
             ConfigureContainer();
 
             var calc = Container.Resolve<ICalculable>();
-            Ejercito ejercito = new Ejercito(calc);
+            Ejercito ejercito = new Ejercito(calc, 30000);
 
             DivisionFactory caballeriaFactory = DivisionFactory.GetDivision(Division.Caballeria);
             DivisionFactory infanteriaFactory = DivisionFactory.GetDivision(Division.Infanteria);
@@ -34,6 +34,7 @@ namespace SistemaDefensa.Client
             ejercito.AddUnidad(artilleriaFactory.GetSubdivision(Subdivision.Artilleria_Canon));
 
             Console.WriteLine("Numero de Unidades: " + ejercito.CounterUnidades());
+            Console.WriteLine("Fondo: " + ejercito.GetFondoDisponible());
             Console.WriteLine("Potencia de Fuego Total: " + ejercito.PotenciaDeFuego());
             Console.WriteLine("Blindaje Total: " + ejercito.Blindaje());
             Console.WriteLine("Capacidad de Movimiento: " + ejercito.Movimiento());

@@ -41,6 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AbstractClasses\AbstractUnidadBuilder.cs" />
+    <Compile Include="Classes\Artilleria\CanonBuilder.cs" />
     <Compile Include="Classes\Bazooka.cs" />
     <Compile Include="Classes\Bicycle.cs" />
     <Compile Include="Classes\DefaultCalculable.cs" />
