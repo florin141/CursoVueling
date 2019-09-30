@@ -286,31 +286,6 @@ namespace SistemaDefensa.Tests
             Assert.ThrowsException<DivideByZeroException>(() => _ejercito.CapacidadMilitar());
         }
 
-
-        [TestMethod]
-        public void Capacidad_militar_test_1()
-        {
-            // Arrange
-            _ejercito.AddUnidad(_transporteMX7899);
-            _ejercito.AddUnidad(_tanqueAtaqueSombrasVB98);
-            _ejercito.AddUnidad(_transporteTAXIN66);
-
-            _ejercito.AddUnidad(_infanteriaBasica);
-            _ejercito.AddUnidad(_ametrallador);
-            _ejercito.AddUnidad(_sanitario);
-
-            _ejercito.AddUnidad(_canonAntiaereo);
-            _ejercito.AddUnidad(_torpederoMovil);
-            _ejercito.AddUnidad(_canon);
-
-            // Act
-            double actual = _ejercito.CapacidadMilitar();
-            double expected = 0.41508;
-
-            // Asert
-            Assert.AreEqual(expected, actual, 0.000008);
-        }
-
         [TestMethod]
         public void CapacidadMilitar_Test1()
         {
