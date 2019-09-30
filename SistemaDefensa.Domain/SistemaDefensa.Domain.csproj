@@ -48,6 +48,8 @@
     <Compile Include="Classes\Pistol.cs" />
     <Compile Include="Classes\Shield.cs" />
     <Compile Include="Enum\Enums.cs" />
+    <Compile Include="Exceptions\FundNotAvailableException.cs" />
+    <Compile Include="Exceptions\UnidadNotFoundException.cs" />
     <Compile Include="Interfaces\ICalculable.cs" />
     <Compile Include="AbstractClasses\AbstractUnidadFactory.cs" />
     <Compile Include="Classes\ConBlindaje.cs" />

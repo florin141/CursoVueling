@@ -10,6 +10,11 @@ namespace SistemaDefensa.Domain
     {
         public double CapacidadMilitar(double pf, double cm, double bl)
         {
+            if (bl == 100)
+                throw new DivideByZeroException();
+            //if (pf == 0 || cm == 0)
+            //    throw new ArithmeticException();
+
             return ((pf * cm) / 2.0) / (100.0 - bl);
         }
     }

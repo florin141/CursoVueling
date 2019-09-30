@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SistemaDefensa.Domain.Exceptions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -30,28 +31,54 @@ namespace SistemaDefensa.Domain
 
         private ICalculable _calculable;
 
-        public Ejercito(ICalculable calculable)
+        private double _fondo;
+
+        public Ejercito(ICalculable calculable, double fondo = double.PositiveInfinity)
         {
+            _fondo = fondo;
             _unidades = new List<Unidad>();
             _calculable = calculable;
         }
 
         /// <summary>
-        /// 
+        /// Sets the fonds for the exercise.
         /// </summary>
-        /// <param name="unidad"></param>
-        public void AddUnidad(Unidad unidad)
+        /// <param name="fondo"></param>
+        public void SetFondo(double fondo)
         {
-            _unidades.Add(unidad);
+            _fondo = fondo;
         }
 
         /// <summary>
-        /// 
+        /// Add units and returns true if the unit is succesfuly added to the exercise.
+        /// </summary>
+        /// <param name="unidad">Unidad</param>
+        public void AddUnidad(Unidad unidad)
+        {
+            var precio = unidad.Precio;
+
+            if (_fondo >= precio)
+            {
+                _unidades.Add(unidad);
+                _fondo -= unidad.Precio;
+            }
+            else
+                throw new FundNotAvailableException();
+        }
+
+        /// <summary>
+        /// Remove units
         /// </summary>
         /// <param name="unidad"></param>
         public void RemoveUnidad(Unidad unidad)
         {
-            _unidades.Remove(unidad);
+            if (_unidades.Contains(unidad))
+            {
+                _unidades.Remove(unidad);
+                _fondo += unidad.Precio;
+            }
+            else
+                throw new UnidadNotFoundException();
         }
 
         /// <summary>
@@ -113,6 +140,11 @@ namespace SistemaDefensa.Domain
             Blindaje();
 
             return _calculable.CapacidadMilitar(_pf, _cm, _bl);
+        }
+
+        public double GetFondoDisponible()
+        {
+            return _fondo;
         }
     }
 }

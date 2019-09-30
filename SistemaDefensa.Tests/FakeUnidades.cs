@@ -13,8 +13,6 @@ namespace SistemaDefensa.Tests
         private static DivisionFactory _infanteriaFactory = DivisionFactory.GetDivision(Division.Infanteria);
         private static DivisionFactory _artilleriaFactory = DivisionFactory.GetDivision(Division.Artilleria);
 
-        ICalculable defaultCalc = new DefaultCalculable();
-
         public static Unidad GetTransporterMX7899()
         {
             return _caballeriaFactory.GetSubdivision(Subdivision.Caballeria_TransporteMX7899);
