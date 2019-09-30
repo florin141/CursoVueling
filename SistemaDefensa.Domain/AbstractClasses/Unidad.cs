@@ -11,6 +11,26 @@ namespace SistemaDefensa.Domain
         protected IBlindado _blindado;
         protected IDestructor _destructor;
 
+        public static readonly Unidad Null = new NullUnidad();
+
+        private class NullUnidad : Unidad
+        {
+            public override double GetBlindaje()
+            {
+                return 0;
+            }
+
+            public override double GetMovilidad()
+            {
+                return 0;
+            }
+
+            public override double GetPotenciaFuego()
+            {
+                return 0;
+            }
+        }
+
         public virtual double GetMovilidad()
         {
             return _velocidad.CapacidadDeMovimiento();

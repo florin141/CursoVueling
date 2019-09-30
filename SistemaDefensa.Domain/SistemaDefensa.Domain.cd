@@ -3,43 +3,36 @@
   <Class Name="SistemaDefensa.Domain.Ejercito">
     <Position X="13.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>CAgAAAAAEAAgAAAFAAAAIAAQAAAAAAAAEAAAAAAjAAA=</HashCode>
-      <FileName>Ejercito\Ejercito.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="SistemaDefensa.Domain.AbstractUnidadFactory">
-    <Position X="3.5" Y="0.75" Width="1.75" />
-    <TypeIdentifier>
-      <HashCode>AAAAQAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Infrastructure\AbstractUnidadFactory.cs</FileName>
+      <HashCode>CAgAAAAAEAAgAAAFAAAAIAAQAAAAAAAAMAAAAAAjAAA=</HashCode>
+      <FileName>Classes\Ejercito.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SistemaDefensa.Domain.ArtilleriaFactory">
     <Position X="3.75" Y="2.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Infrastructure\ArtilleriaFactory.cs</FileName>
+      <HashCode>AAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\ArtilleriaFactory.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SistemaDefensa.Domain.CaballeriaFactory">
     <Position X="1.5" Y="2.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Infrastructure\CaballeriaFactory.cs</FileName>
+      <HashCode>AAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\CaballeriaFactory.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SistemaDefensa.Domain.InfanteriaFactory">
     <Position X="6" Y="2.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Infrastructure\InfanteriaFactory.cs</FileName>
+      <HashCode>AAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\InfanteriaFactory.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SistemaDefensa.Domain.ConBlindaje" BaseTypeListCollapsed="true">
     <Position X="24.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAIEAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Interfaces\ConBlindaje.cs</FileName>
+      <FileName>Classes\ConBlindaje.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
@@ -47,7 +40,7 @@
     <Position X="26" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAgAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Interfaces\ConFuego.cs</FileName>
+      <FileName>Classes\ConFuego.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
@@ -55,7 +48,7 @@
     <Position X="22.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAIAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Interfaces\ConMovilidad.cs</FileName>
+      <FileName>Classes\ConMovilidad.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
@@ -63,7 +56,7 @@
     <Position X="24.25" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Interfaces\SinBlindaje.cs</FileName>
+      <FileName>Classes\SinBlindaje.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
@@ -71,7 +64,7 @@
     <Position X="26" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Interfaces\SinFuego.cs</FileName>
+      <FileName>Classes\SinFuego.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
@@ -79,7 +72,7 @@
     <Position X="22.5" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Interfaces\SinMovilidad.cs</FileName>
+      <FileName>Classes\SinMovilidad.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
@@ -87,7 +80,7 @@
     <Position X="1" Y="5.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Unidades\Ametrallador.cs</FileName>
+      <FileName>Classes\Infanteria\Ametrallador.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
@@ -95,7 +88,7 @@
     <Position X="8" Y="5.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Unidades\Canon.cs</FileName>
+      <FileName>Classes\Artilleria\Canon.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
@@ -103,7 +96,7 @@
     <Position X="13.25" Y="5.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Unidades\CanonAntiaereo.cs</FileName>
+      <FileName>Classes\Artilleria\CanonAntiaereo.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
@@ -111,7 +104,7 @@
     <Position X="17.75" Y="5.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Unidades\InfanteriaBasica.cs</FileName>
+      <FileName>Classes\Infanteria\InfanteriaBasica.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
@@ -119,7 +112,7 @@
     <Position X="3.25" Y="5.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Unidades\Sanitario.cs</FileName>
+      <FileName>Classes\Infanteria\Sanitario.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
@@ -127,7 +120,7 @@
     <Position X="10.25" Y="5.25" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Unidades\TanqueAtaqueSombrasVB98.cs</FileName>
+      <FileName>Classes\Caballeria\TanqueAtaqueSombrasVB98.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
@@ -135,7 +128,7 @@
     <Position X="15.5" Y="5.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Unidades\TorpederoMovil.cs</FileName>
+      <FileName>Classes\Artilleria\TorpederoMovil.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
@@ -143,7 +136,7 @@
     <Position X="20" Y="5.25" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Unidades\TransporteMX7899.cs</FileName>
+      <FileName>Classes\Caballeria\TransporteMX7899.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
@@ -151,7 +144,7 @@
     <Position X="5.5" Y="5.25" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Unidades\TransporteTAXIN66.cs</FileName>
+      <FileName>Classes\Caballeria\TransporteTAXIN66.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
@@ -159,7 +152,14 @@
     <Position X="10.5" Y="0.5" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AIAAAAAgAAAAAAAAgAAAhAEwAAgAAAAAAAAAAAoQAEA=</HashCode>
-      <FileName>Unidades\Unidad.cs</FileName>
+      <FileName>AbstractClasses\Unidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SistemaDefensa.Domain.DivisionFactory">
+    <Position X="3.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAEAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>AbstractClasses\AbstractUnidadFactory.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Interface Name="SistemaDefensa.Domain.IArilleria">

@@ -13,7 +13,7 @@
                 case Subdivision.Infanteria_Sanitario:
                     return new Sanitario();
                 default:
-                    return null;
+                    return Unidad.Null;
             }
         }
     }

@@ -13,7 +13,7 @@
                 case Subdivision.Artilleria_Canon:
                     return new Canon();
                 default:
-                    return null;
+                    return Unidad.Null;
             }
         }
     }

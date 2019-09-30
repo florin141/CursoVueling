@@ -13,7 +13,7 @@
                 case Subdivision.Caballeria_TransporteTAXIN66:
                     return new TransporteTAXIN66();
                 default:
-                    return null;
+                    return Unidad.Null;
             }
         }
     }
