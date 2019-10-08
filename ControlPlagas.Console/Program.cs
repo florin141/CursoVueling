@@ -20,26 +20,8 @@ namespace ControlPlagas.Console
         {
             ConfigureContainer();
 
-            var clientRepo = Container.Resolve<IRepository<Cliente>>();
-
-            clientRepo.Insert(new List<Cliente>
-            {
-                //new Cliente
-                //{
-                //    NombreCompleto = "Florin Ciobanu", CorreoElectronico = "cflorin@hiberus.com",
-                //    Telefono = "643447860", Direccion = "Zaragoza, Spain", CodicoPostal = "50009"
-                //},
-                new Cliente
-                {
-                    NombreCompleto = "Duis Dorado", CorreoElectronico = "dluis@hiberus.com",
-                    Telefono = "643447860", Direccion = "Zaragoza, Spain", CodicoPostal = "50010"
-                },
-                new Cliente
-                {
-                    NombreCompleto = "Ana Marin", CorreoElectronico = "mana@hiberus.com",
-                    Telefono = "643447860", Direccion = "Zaragoza, Spain", CodicoPostal = "50010"
-                }
-            });
+            //Seed.AddClients(Container.Resolve<IRepository<Cliente>>());
+            //Seed.AddServicios(Container.Resolve<IRepository<Servicio>>());
         }
 
         private static void ConfigureContainer()

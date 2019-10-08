@@ -15,14 +15,11 @@ namespace ControlPlagas.Data.Mapping
             this.ToTable(nameof(Cliente));
             this.HasKey(c => c.Id);
 
-            this.Property(c => c.NombreCompleto).HasMaxLength(256);
-            this.Property(c => c.Telefono).HasMaxLength(13);
-            this.Property(c => c.CorreoElectronico).HasMaxLength(256);
-            this.Property(c => c.Direccion).HasMaxLength(256);
-            this.Property(c => c.CodicoPostal).HasMaxLength(10);
-
-            this.HasMany<Factura>(f => f.Facturas)
-                .WithOptional(c => c.Cliente);
+            this.Property(c => c.NombreCompleto).HasMaxLength(256).IsRequired();
+            this.Property(c => c.Telefono).HasMaxLength(15).IsRequired();
+            this.Property(c => c.CorreoElectronico).HasMaxLength(256).IsRequired();
+            this.Property(c => c.Direccion).HasMaxLength(512).IsOptional();
+            this.Property(c => c.CodicoPostal).HasMaxLength(10).IsOptional();
         }
     }
 }

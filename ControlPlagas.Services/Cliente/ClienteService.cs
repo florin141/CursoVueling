@@ -26,7 +26,7 @@ namespace ControlPlagas.Services
             return _clienteRepository.GetById(clienteId);
         }
 
-        public IList<Cliente> GetClientes()
+        public IEnumerable<Cliente> GetAll()
         {
             var query = _clienteRepository.Table;
 

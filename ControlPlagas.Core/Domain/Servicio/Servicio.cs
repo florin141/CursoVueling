@@ -12,12 +12,21 @@ namespace ControlPlagas.Core.Domain
         {
             Trabajadores = new HashSet<Trabajador>();
             Recursos = new HashSet<Recurso>();
+            Facturas = new HashSet<Factura>();
         }
 
         public string NombreServicio { get; set; }
-        public virtual ICollection<Trabajador> Trabajadores { get; set; }
+        public virtual ICollection<Trabajador> Trabajadores { get; private set; }
         public virtual ICollection<Recurso> Recursos { get; set; }
+        public virtual ICollection<Factura> Facturas { get; set; }
         public int Precio { get; set; }
-        public virtual Factura Factura { get; set; }
+
+        public void SetTrabajadores(Trabajador jefe, params Trabajador[] peones)
+        {
+            Trabajadores.Add(jefe);
+
+            foreach (var peon in peones)
+                Trabajadores.Add(peon);
+        }
     }
 }

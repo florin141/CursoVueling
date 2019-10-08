@@ -48,12 +48,9 @@
     <Compile Include="Plaga\IPlagaService.cs" />
     <Compile Include="Plaga\PlagaService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Recurso\CosteMaximoSpecification.cs" />
     <Compile Include="Recurso\IRecursoService.cs" />
     <Compile Include="Recurso\RecursoService.cs" />
-    <Compile Include="Servicio\IngresoMaximoSpecification.cs" />
     <Compile Include="Servicio\IServicioService.cs" />
-    <Compile Include="Servicio\PeonesMaximoSpecification.cs" />
     <Compile Include="Servicio\ServicioService.cs" />
     <Compile Include="Trabajador\ITrabajadorService.cs" />
     <Compile Include="Trabajador\TrabajadorService.cs" />
@@ -64,5 +61,6 @@
       <Name>ControlPlagas.Core</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

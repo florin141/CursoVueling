@@ -13,6 +13,9 @@ namespace ControlPlagas.Core.Domain
             Servicios = new HashSet<Servicio>();
         }
 
+        public DateTime Fecha { get; set; }
+        public float Precio { get; set; }
+        public int ClienteId { get; set; }
         public virtual Cliente Cliente { get; set; }
         public virtual ICollection<Servicio> Servicios { get; set; }
     }

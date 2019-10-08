@@ -12,14 +12,10 @@ namespace ControlPlagas.Services
     {
         Servicio GetById(int servicioId);
 
-        //float GetGastoEquipo();
+        void Insert(Servicio servicio);
 
-        //float GetGastoEmpresa();
+        void Update(Servicio servicio);
 
-        //float GetIngreso();
-
-        //IList<Cliente> GetClientes(int serviceId);
-
-        //IList<Cliente> GetClientes(Servicio servicio);
+        void Delete(Servicio servicio);
     }
 }

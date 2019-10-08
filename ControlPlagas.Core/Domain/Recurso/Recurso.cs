@@ -8,7 +8,13 @@ namespace ControlPlagas.Core.Domain
 {
     public class Recurso : BaseEntity
     {
+        public Recurso()
+        {
+            Servicios = new HashSet<Servicio>();
+        }
+
         public string NombreRecurso { get; set; }
         public float Coste { get; set; }
+        public ICollection<Servicio> Servicios { get; set; }
     }
 }

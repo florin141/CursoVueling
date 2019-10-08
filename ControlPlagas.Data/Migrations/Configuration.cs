@@ -1,18 +1,15 @@
-﻿namespace ControlPlagas.Data.Migrations
-{
-    using System;
-    using System.Data.Entity;
-    using System.Data.Entity.Migrations;
-    using System.Linq;
+﻿using System.Data.Entity.Migrations;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<ControlPlagas.Data.ControlPlagasObjectContext>
+namespace ControlPlagas.Data.Migrations
+{
+    internal sealed class Configuration : DbMigrationsConfiguration<ControlPlagasObjectContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(ControlPlagas.Data.ControlPlagasObjectContext context)
+        protected override void Seed(ControlPlagasObjectContext context)
         {
             //  This method will be called after migrating to the latest version.
 

@@ -41,24 +41,22 @@ namespace ControlPlagas.Services
             _facturaRepository.Delete(factura);
         }
 
-        public float GetTotal()
+        public float GetTotalFacturado(int clienteId)
         {
-            throw new NotImplementedException();
+            return GetServicios(clienteId).Sum(s => s.Precio);
         }
 
-        public IList<Servicio> GetServicios(Cliente cliente)
+        public float GetTotal(IClienteService clienteService)
         {
-            if (cliente == null)
-                return null;
-
-            var query = _facturaRepository.Table
-                .Where(c => c.Cliente == cliente)
-                .SelectMany(s => s.Servicios);
-
-            return query.ToList();
+            return clienteService.GetAll().SelectMany(f => f.Facturas).Sum(p => p.Precio);
         }
 
-        public IList<Servicio> GetServicios(int clienteId)
+        public IEnumerable<Servicio> GetServicios(Cliente cliente)
+        {
+            return GetServicios(cliente.Id);
+        }
+
+        public IEnumerable<Servicio> GetServicios(int clienteId)
         {
             if (clienteId == 0)
                 return null;
@@ -68,16 +66,6 @@ namespace ControlPlagas.Services
                 .SelectMany(s => s.Servicios);
 
             return query.ToList();
-        }
-
-        public IList<Cliente> GetClientes(int serviceId)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IList<Cliente> GetClientes(Servicio servicio)
-        {
-            throw new NotImplementedException();
         }
     }
 }

@@ -8,15 +8,12 @@
         public override void Up()
         {
             CreateTable(
-                "dbo.Cliente",
+                "dbo.Servicio",
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
-                        NombreCompleto = c.String(maxLength: 256),
-                        Telefono = c.String(maxLength: 13),
-                        CorreoElectronico = c.String(maxLength: 256),
-                        Direccion = c.String(maxLength: 256),
-                        CodicoPostal = c.String(maxLength: 10),
+                        NombreServicio = c.String(nullable: false, maxLength: 128),
+                        Precio = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.Id);
             
@@ -25,24 +22,26 @@
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
-                        Cliente_Id = c.Int(),
+                        Fecha = c.DateTime(nullable: false),
+                        Precio = c.Single(nullable: false),
+                        ClienteId = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Cliente", t => t.Cliente_Id)
-                .Index(t => t.Cliente_Id);
+                .ForeignKey("dbo.Clientes", t => t.ClienteId, cascadeDelete: true)
+                .Index(t => t.ClienteId);
             
             CreateTable(
-                "dbo.Servicios",
+                "dbo.Clientes",
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
-                        NombreServicio = c.String(),
-                        Precio = c.Int(nullable: false),
-                        Factura_Id = c.Int(),
+                        NombreCompleto = c.String(),
+                        Telefono = c.String(),
+                        CorreoElectronico = c.String(),
+                        Direccion = c.String(),
+                        CodicoPostal = c.String(),
                     })
-                .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Facturas", t => t.Factura_Id)
-                .Index(t => t.Factura_Id);
+                .PrimaryKey(t => t.Id);
             
             CreateTable(
                 "dbo.Recursoes",
@@ -54,13 +53,10 @@
                         Unidad = c.String(),
                         Discriminator = c.String(nullable: false, maxLength: 128),
                         Plaga_Id = c.Int(),
-                        Servicio_Id = c.Int(),
                     })
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.Plagas", t => t.Plaga_Id)
-                .ForeignKey("dbo.Servicios", t => t.Servicio_Id)
-                .Index(t => t.Plaga_Id)
-                .Index(t => t.Servicio_Id);
+                .Index(t => t.Plaga_Id);
             
             CreateTable(
                 "dbo.Plagas",
@@ -80,32 +76,77 @@
                         NombreCompleto = c.String(),
                         Categoria = c.Int(nullable: false),
                         Salario = c.Double(nullable: false),
-                        Servicio_Id = c.Int(),
                     })
-                .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Servicios", t => t.Servicio_Id)
-                .Index(t => t.Servicio_Id);
+                .PrimaryKey(t => t.Id);
+            
+            CreateTable(
+                "dbo.ServicioFactura",
+                c => new
+                    {
+                        IdServicio = c.Int(nullable: false),
+                        IdFactura = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => new { t.IdServicio, t.IdFactura })
+                .ForeignKey("dbo.Servicio", t => t.IdServicio, cascadeDelete: true)
+                .ForeignKey("dbo.Facturas", t => t.IdFactura, cascadeDelete: true)
+                .Index(t => t.IdServicio)
+                .Index(t => t.IdFactura);
+            
+            CreateTable(
+                "dbo.ServicioRecurso",
+                c => new
+                    {
+                        IdServicio = c.Int(nullable: false),
+                        IdRecurso = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => new { t.IdServicio, t.IdRecurso })
+                .ForeignKey("dbo.Servicio", t => t.IdServicio, cascadeDelete: true)
+                .ForeignKey("dbo.Recursoes", t => t.IdRecurso, cascadeDelete: true)
+                .Index(t => t.IdServicio)
+                .Index(t => t.IdRecurso);
+            
+            CreateTable(
+                "dbo.ServicioTrabajador",
+                c => new
+                    {
+                        IdServicio = c.Int(nullable: false),
+                        IdTrabajador = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => new { t.IdServicio, t.IdTrabajador })
+                .ForeignKey("dbo.Servicio", t => t.IdServicio, cascadeDelete: true)
+                .ForeignKey("dbo.Trabajadors", t => t.IdTrabajador, cascadeDelete: true)
+                .Index(t => t.IdServicio)
+                .Index(t => t.IdTrabajador);
             
         }
         
         public override void Down()
         {
-            DropForeignKey("dbo.Facturas", "Cliente_Id", "dbo.Cliente");
-            DropForeignKey("dbo.Trabajadors", "Servicio_Id", "dbo.Servicios");
-            DropForeignKey("dbo.Recursoes", "Servicio_Id", "dbo.Servicios");
+            DropForeignKey("dbo.ServicioTrabajador", "IdTrabajador", "dbo.Trabajadors");
+            DropForeignKey("dbo.ServicioTrabajador", "IdServicio", "dbo.Servicio");
+            DropForeignKey("dbo.ServicioRecurso", "IdRecurso", "dbo.Recursoes");
+            DropForeignKey("dbo.ServicioRecurso", "IdServicio", "dbo.Servicio");
             DropForeignKey("dbo.Recursoes", "Plaga_Id", "dbo.Plagas");
-            DropForeignKey("dbo.Servicios", "Factura_Id", "dbo.Facturas");
-            DropIndex("dbo.Trabajadors", new[] { "Servicio_Id" });
-            DropIndex("dbo.Recursoes", new[] { "Servicio_Id" });
+            DropForeignKey("dbo.ServicioFactura", "IdFactura", "dbo.Facturas");
+            DropForeignKey("dbo.ServicioFactura", "IdServicio", "dbo.Servicio");
+            DropForeignKey("dbo.Facturas", "ClienteId", "dbo.Clientes");
+            DropIndex("dbo.ServicioTrabajador", new[] { "IdTrabajador" });
+            DropIndex("dbo.ServicioTrabajador", new[] { "IdServicio" });
+            DropIndex("dbo.ServicioRecurso", new[] { "IdRecurso" });
+            DropIndex("dbo.ServicioRecurso", new[] { "IdServicio" });
+            DropIndex("dbo.ServicioFactura", new[] { "IdFactura" });
+            DropIndex("dbo.ServicioFactura", new[] { "IdServicio" });
             DropIndex("dbo.Recursoes", new[] { "Plaga_Id" });
-            DropIndex("dbo.Servicios", new[] { "Factura_Id" });
-            DropIndex("dbo.Facturas", new[] { "Cliente_Id" });
+            DropIndex("dbo.Facturas", new[] { "ClienteId" });
+            DropTable("dbo.ServicioTrabajador");
+            DropTable("dbo.ServicioRecurso");
+            DropTable("dbo.ServicioFactura");
             DropTable("dbo.Trabajadors");
             DropTable("dbo.Plagas");
             DropTable("dbo.Recursoes");
-            DropTable("dbo.Servicios");
+            DropTable("dbo.Clientes");
             DropTable("dbo.Facturas");
-            DropTable("dbo.Cliente");
+            DropTable("dbo.Servicio");
         }
     }
 }

@@ -5,7 +5,7 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ControlPlagas.Core.Domain
+namespace ControlPlagas.Core.Specifications
 {
     internal sealed class IdentitySpecification<TEntity> : Specification<TEntity> where TEntity : BaseEntity
     {

@@ -10,15 +10,15 @@ namespace ControlPlagas.Data
 {
     public class ControlPlagasObjectContext : DbContext
     {
-        public ControlPlagasObjectContext()
-            : base("LocalDb")
+        public ControlPlagasObjectContext() 
+            : base("ControlPlagasDb")
         {
             Database.SetInitializer(new CreateDatabaseIfNotExists<ControlPlagasObjectContext>());
         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Configurations.Add(new ClienteMap());
+            modelBuilder.Configurations.Add(new ServiciosMap());
 
             base.OnModelCreating(modelBuilder);
         }

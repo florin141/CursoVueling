@@ -16,5 +16,7 @@ namespace ControlPlagas.Services
         void Update(Cliente cliente);
 
         void Delete(Cliente cliente);
+
+        IEnumerable<Cliente> GetAll();
     }
 }
