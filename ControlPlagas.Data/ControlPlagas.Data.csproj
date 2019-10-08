@@ -56,9 +56,10 @@
     <Compile Include="Mapping\ClienteMap.cs" />
     <Compile Include="Mapping\FacturaMap.cs" />
     <Compile Include="Mapping\ServiciosMap.cs" />
-    <Compile Include="Migrations\201910072243382_Initial.cs" />
-    <Compile Include="Migrations\201910072243382_Initial.designer.cs">
-      <DependentUpon>201910072243382_Initial.cs</DependentUpon>
+    <Compile Include="Mapping\TrabajadorMap.cs" />
+    <Compile Include="Migrations\201910082135039_Initial.cs" />
+    <Compile Include="Migrations\201910082135039_Initial.designer.cs">
+      <DependentUpon>201910082135039_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -74,11 +75,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201910072243382_Initial.resx">
-      <DependentUpon>201910072243382_Initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201910082135039_Initial.resx">
+      <DependentUpon>201910082135039_Initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

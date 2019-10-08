@@ -13,7 +13,7 @@ namespace ControlPlagas.Data.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201910072243382_Initial"; }
+            get { return "201910082135039_Initial"; }
         }
         
         string IMigrationMetadata.Source

@@ -37,6 +37,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControlPlagas.Data", "Contr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ControlPlagas.Services.Tests", "ControlPlagas.Services.Tests\ControlPlagas.Services.Tests.csproj", "{A44F6583-AC17-451A-82B5-77AA8FE8FF49}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControlPlagas.Services.IntegrationTests", "ControlPlagas.Services.IntegrationTests\ControlPlagas.Services.IntegrationTests.csproj", "{FF44A0A3-3282-4A33-9EAB-1FD1A42463DB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -79,6 +81,10 @@ Global
 		{A44F6583-AC17-451A-82B5-77AA8FE8FF49}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A44F6583-AC17-451A-82B5-77AA8FE8FF49}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A44F6583-AC17-451A-82B5-77AA8FE8FF49}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF44A0A3-3282-4A33-9EAB-1FD1A42463DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF44A0A3-3282-4A33-9EAB-1FD1A42463DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF44A0A3-3282-4A33-9EAB-1FD1A42463DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF44A0A3-3282-4A33-9EAB-1FD1A42463DB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -99,6 +105,7 @@ Global
 		{FF272685-EE77-4F38-8B82-A7E15A3949F5} = {08ABE52F-E783-4B9A-A534-35A7444AE30C}
 		{722393C1-5ECA-41B6-8C42-3C76BCCA7DF2} = {08ABE52F-E783-4B9A-A534-35A7444AE30C}
 		{A44F6583-AC17-451A-82B5-77AA8FE8FF49} = {8208C259-15CD-4C48-ACEB-71016812BA08}
+		{FF44A0A3-3282-4A33-9EAB-1FD1A42463DB} = {8208C259-15CD-4C48-ACEB-71016812BA08}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B925B669-9CC4-4B2E-A8C9-55B2D9EAB477}

@@ -18,7 +18,7 @@
                 .PrimaryKey(t => t.Id);
             
             CreateTable(
-                "dbo.Facturas",
+                "dbo.Factura",
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
@@ -27,19 +27,19 @@
                         ClienteId = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Clientes", t => t.ClienteId, cascadeDelete: true)
+                .ForeignKey("dbo.Cliente", t => t.ClienteId, cascadeDelete: true)
                 .Index(t => t.ClienteId);
             
             CreateTable(
-                "dbo.Clientes",
+                "dbo.Cliente",
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
-                        NombreCompleto = c.String(),
-                        Telefono = c.String(),
-                        CorreoElectronico = c.String(),
-                        Direccion = c.String(),
-                        CodicoPostal = c.String(),
+                        NombreCompleto = c.String(nullable: false, maxLength: 256),
+                        Telefono = c.String(nullable: false, maxLength: 15),
+                        CorreoElectronico = c.String(nullable: false, maxLength: 256),
+                        Direccion = c.String(maxLength: 512),
+                        CodicoPostal = c.String(maxLength: 10),
                     })
                 .PrimaryKey(t => t.Id);
             
@@ -69,11 +69,11 @@
                 .PrimaryKey(t => t.Id);
             
             CreateTable(
-                "dbo.Trabajadors",
+                "dbo.Trabajador",
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
-                        NombreCompleto = c.String(),
+                        NombreCompleto = c.String(nullable: false, maxLength: 128),
                         Categoria = c.Int(nullable: false),
                         Salario = c.Double(nullable: false),
                     })
@@ -88,7 +88,7 @@
                     })
                 .PrimaryKey(t => new { t.IdServicio, t.IdFactura })
                 .ForeignKey("dbo.Servicio", t => t.IdServicio, cascadeDelete: true)
-                .ForeignKey("dbo.Facturas", t => t.IdFactura, cascadeDelete: true)
+                .ForeignKey("dbo.Factura", t => t.IdFactura, cascadeDelete: true)
                 .Index(t => t.IdServicio)
                 .Index(t => t.IdFactura);
             
@@ -114,7 +114,7 @@
                     })
                 .PrimaryKey(t => new { t.IdServicio, t.IdTrabajador })
                 .ForeignKey("dbo.Servicio", t => t.IdServicio, cascadeDelete: true)
-                .ForeignKey("dbo.Trabajadors", t => t.IdTrabajador, cascadeDelete: true)
+                .ForeignKey("dbo.Trabajador", t => t.IdTrabajador, cascadeDelete: true)
                 .Index(t => t.IdServicio)
                 .Index(t => t.IdTrabajador);
             
@@ -122,14 +122,14 @@
         
         public override void Down()
         {
-            DropForeignKey("dbo.ServicioTrabajador", "IdTrabajador", "dbo.Trabajadors");
+            DropForeignKey("dbo.ServicioTrabajador", "IdTrabajador", "dbo.Trabajador");
             DropForeignKey("dbo.ServicioTrabajador", "IdServicio", "dbo.Servicio");
             DropForeignKey("dbo.ServicioRecurso", "IdRecurso", "dbo.Recursoes");
             DropForeignKey("dbo.ServicioRecurso", "IdServicio", "dbo.Servicio");
             DropForeignKey("dbo.Recursoes", "Plaga_Id", "dbo.Plagas");
-            DropForeignKey("dbo.ServicioFactura", "IdFactura", "dbo.Facturas");
+            DropForeignKey("dbo.ServicioFactura", "IdFactura", "dbo.Factura");
             DropForeignKey("dbo.ServicioFactura", "IdServicio", "dbo.Servicio");
-            DropForeignKey("dbo.Facturas", "ClienteId", "dbo.Clientes");
+            DropForeignKey("dbo.Factura", "ClienteId", "dbo.Cliente");
             DropIndex("dbo.ServicioTrabajador", new[] { "IdTrabajador" });
             DropIndex("dbo.ServicioTrabajador", new[] { "IdServicio" });
             DropIndex("dbo.ServicioRecurso", new[] { "IdRecurso" });
@@ -137,15 +137,15 @@
             DropIndex("dbo.ServicioFactura", new[] { "IdFactura" });
             DropIndex("dbo.ServicioFactura", new[] { "IdServicio" });
             DropIndex("dbo.Recursoes", new[] { "Plaga_Id" });
-            DropIndex("dbo.Facturas", new[] { "ClienteId" });
+            DropIndex("dbo.Factura", new[] { "ClienteId" });
             DropTable("dbo.ServicioTrabajador");
             DropTable("dbo.ServicioRecurso");
             DropTable("dbo.ServicioFactura");
-            DropTable("dbo.Trabajadors");
+            DropTable("dbo.Trabajador");
             DropTable("dbo.Plagas");
             DropTable("dbo.Recursoes");
-            DropTable("dbo.Clientes");
-            DropTable("dbo.Facturas");
+            DropTable("dbo.Cliente");
+            DropTable("dbo.Factura");
             DropTable("dbo.Servicio");
         }
     }

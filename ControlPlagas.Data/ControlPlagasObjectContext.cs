@@ -19,6 +19,9 @@ namespace ControlPlagas.Data
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Configurations.Add(new ServiciosMap());
+            modelBuilder.Configurations.Add(new ClienteMap());
+            modelBuilder.Configurations.Add(new FacturaMap());
+            modelBuilder.Configurations.Add(new TrabajadorMap());
 
             base.OnModelCreating(modelBuilder);
         }
