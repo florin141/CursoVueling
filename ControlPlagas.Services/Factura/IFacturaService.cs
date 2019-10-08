@@ -15,6 +15,12 @@ namespace ControlPlagas.Services
 
         void Delete(Factura factura);
 
-        float GetTotal();
+        float GetTotalFacturado(int clienteId);
+
+        float GetTotal(IClienteService clienteService);
+
+        IEnumerable<Servicio> GetServicios(Cliente cliente);
+
+        IEnumerable<Servicio> GetServicios(int clienteId);
     }
 }
