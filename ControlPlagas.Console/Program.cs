@@ -20,8 +20,17 @@ namespace ControlPlagas.Console
         {
             ConfigureContainer();
 
-            //Seed.AddClients(Container.Resolve<IRepository<Cliente>>());
-            //Seed.AddServicios(Container.Resolve<IRepository<Servicio>>());
+            System.Console.WriteLine("Creating the database...");
+
+            System.Console.WriteLine("Inserting sample clients...");
+
+            Seed.AddClients(Container.Resolve<IRepository<Cliente>>());
+
+            System.Console.WriteLine("Inserting sample services...");
+
+            Seed.AddServicios(Container.Resolve<IRepository<Servicio>>());
+
+            System.Console.WriteLine("Complete!");
         }
 
         private static void ConfigureContainer()
